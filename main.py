@@ -3,7 +3,7 @@ import os
 import random
 from pathlib import Path
 from servicefile import save_wall_image, get_wall_upload_url, fetch_comic, get_latest_comic_num, \
-    get_comic_url_comments, publish_wall_image
+    get_comic_url_and_comments, publish_wall_image
 
 
 def main():
@@ -12,7 +12,7 @@ def main():
         token = os.environ['VK_TOKEN']
         group_id = int(os.environ['VK_GROUP_ID'])
         random_comic_num = random.randint(1, get_latest_comic_num()+1)
-        url, comments = get_comic_url_comments(random_comic_num)
+        url, comments = get_comic_url_and_comments(random_comic_num)
         image = fetch_comic(url)
         upload_url = get_wall_upload_url(token, group_id)
         photo_id = save_wall_image(token, group_id, upload_url, image)

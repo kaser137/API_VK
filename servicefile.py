@@ -8,7 +8,7 @@ def get_latest_comic_num():
     return response.json()['num']
 
 
-def get_comic_url_comments(comic_num):
+def get_comic_url_and_comments(comic_num):
     response = requests.get(f'https://xkcd.com/{comic_num}/info.0.json')
     response.raise_for_status()
     response = response.json()
