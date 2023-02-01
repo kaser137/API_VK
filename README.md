@@ -22,7 +22,11 @@ dependencies: `
 ```commandline
 pip install -r requirements.txt
 ```
-Start file `main.py`, if all good, you will see string like that: 
+Start file: 
+```commandline
+python main.py
+```
+if all good, you will see string like that: 
 >{'response': {'post_id': 37}}
 
 It means that random comic is published at the wall of your group. You can also check it, just visit your group.
