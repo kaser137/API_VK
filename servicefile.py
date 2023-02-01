@@ -46,8 +46,8 @@ def save_wall_image(token, group_id, upload_url, image, v=5.131):
                'group_id': group_id}
     response = requests.post('https://api.vk.com/method/photos.saveWallPhoto', params=payload)
     response.raise_for_status()
-    answer = response.json()['response'][0]
-    photo_id = ''.join(('photo', str(answer['owner_id']), '_', str(answer['id'])))
+    response = response.json()['response'][0]
+    photo_id = ''.join(('photo', str(response['owner_id']), '_', str(response['id'])))
     return photo_id
 
 
