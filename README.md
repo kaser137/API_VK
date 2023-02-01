@@ -1,4 +1,4 @@
-# Analysing vacancies
+# Publishing comics
 
 ## What is this?
 
