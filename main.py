@@ -13,12 +13,12 @@ def main():
         group_id = int(os.environ['VK_GROUP_ID'])
         random_comic_num = random.randint(1, get_latest_comic_num()+1)
         url, comments = get_comic_url_and_comments(random_comic_num)
-        image = fetch_comic(url)
+        image_path = fetch_comic(url)
         upload_url = get_wall_upload_url(token, group_id)
-        photo_id = save_wall_image(token, group_id, upload_url, image)
+        photo_id = save_wall_image(token, group_id, upload_url, image_path)
         print(publish_wall_image(token, group_id, photo_id, comments))
     finally:
-        os.remove(image)
+        os.remove(image_path)
 
 
 if __name__ == '__main__':
